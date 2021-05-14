@@ -1,0 +1,37 @@
+<cu-custom bgColor="bg-blue" isBack="{{true}}"><view slot="backText"></view><view slot="content"></view></cu-custom>
+
+<scroll-view class="cu-chat" scroll-y scroll-into-view="{{toView}}" style='height:82vh'>
+<view wx:for="{{chats}}" wx:key="index"  wx:for-index="index" >
+  <view wx:if="{{openId == item._openid}}" class="cu-item self" id='m{{index}}'>
+    <view class="main" style="display:flex;flex-direction:column">
+      <view style="align-self:flex-end" >{{item.nickName}}</view>
+      <view class="content bg-green shadow">
+        <text>{{item.textContent}}</text>
+      </view>
+    </view>
+    <view class="cu-avatar round" style="background-image:url({{item.avatar}});"></view>
+    <view class="date">{{item.sendTime}}</view>
+  </view>
+
+  <view wx:else class="cu-item" id='m{{index}}'>
+    <view class="cu-avatar round" style="background-image:url({{item.avatar}});"></view>
+   <view class="main" style="display:flex;flex-direction:column">
+      <view style="align-self:flex-start" >{{item.nickName}}</view>
+      <view class="content bg-white shadow">
+        <text>{{item.textContent}}</text>
+      </view>
+    </view>
+   
+    <view class="date">{{item.sendTime}}</view>
+  </view>
+</view>
+  
+</scroll-view>
+  
+
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+ 
+  <input class="solid-bottom" placeholder="请输入" value="{{textInputValue}}" bindinput="onTextInput" adjust-position="{{false}}" bindfocus="InputFocus" bindblur="InputBlur" focus="{{false}}" maxlength="300" cursor-spacing="10"></input>
+
+  <button class="cu-btn bg-green shadow"  bindtap="onSend">发送</button>
+</view>

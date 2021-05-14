@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTitleText": "本周报表"
+}

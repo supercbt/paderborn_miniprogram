@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/show/show",
+    "pages/timeline/timeline",
+    "pages/customize/customize",
+    "pages/chatroom/chatroom",
+    "pages/report/report"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/timeline/timeline",
+        "iconPath": "images/t1a.png",
+        "selectedIconPath": "images/t1.png"
+      },
+      {
+        "pagePath": "pages/show/show",
+        "iconPath": "images/t2a.png",
+        "selectedIconPath": "images/t2.png"
+      },
+      {
+        "pagePath": "pages/customize/customize",
+        "iconPath": "images/t3a.png",
+        "selectedIconPath": "images/t3.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "ec-canvas": "/ec-canvas/ec-canvas",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-tab": "@vant/weapp/tab/index"
+
+  },
+  "sitemapLocation": "sitemap.json"
+}

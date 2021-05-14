@@ -1,0 +1,35 @@
+/* pages/timeline/timeline.wxss */
+page {
+  background-color: white;
+  /* the same as btblue */
+}
+
+
+.index1 {
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 0;
+  font-size: 50rpx;
+  color: 	white;
+  /* color: rgb(36, 131, 160); */
+  font-weight: 500;
+  /* text-shadow: #aaaaaa 5rpx 5rpx 1rpx; */
+  /* background-color: white; */
+}
+
+image{
+height:30rpx;
+width: 30rpx;
+}
+
+.chose{
+  color: white; font-size: 40rpx;text-shadow:#444444 0 0 0
+}
+
+.section{
+
+  border-radius:20rpx;
+  height:300rpx;
+  width: 95%;
+  transform:translate(2.5%);
+}

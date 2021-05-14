@@ -1,0 +1,90 @@
+
+<van-tabs sticky color="#87CEEB" active="{{ active }}" bind:change="onChange">
+  <van-tab  title="轴承状态">
+
+  <view class="card">
+    <view class="title">轴承状态监控</view>
+    <view class="container">
+      <view class="led"> 
+        <view  bindtap="addCollect" id="0"  class= " circle {{ldata[time]?'':'green'}} "  hover-class="hover" hover-stay-time="100">
+          <image  src="../../images/fan.png"></image>
+        </view>
+        <!-- <view class="state">15号:{{labels1[time].predict?'良好':'故障'}}</view> -->
+        <view class="state">
+           <image src="../../images/select.png" style="width:40rpx;margin-right:10rpx" mode="widthFix"></image> 
+           <picker bindchange="bearingChange1" value="{{bearingIndex1}}" range="{{bearingName}}">
+               {{bearingName[bearingIndex1]}}               
+           </picker>
+           <image class="img" src="../../images/down.png"></image>
+        </view>
+        <view class="state state1">{{states[ldata[time%ldata.length]]}}</view>
+      </view>
+      <view class="led">
+        <view  bindtap="addCollect" id="1" class="circle {{rdata[time]?'':'green'}}" hover-class="hover" hover-stay-time="100">
+          <image  src="../../images/fan.png"></image>
+        </view>
+        <!-- <view class="state">21号:{{labels2[time].predict?'良好':'故障'}}</view> -->
+        <view class="state">
+           <image src="../../images/select.png" style="width:40rpx;margin-right:10rpx" mode="widthFix"></image> 
+           <picker bindchange="bearingChange2" value="{{bearingInde2}}" range="{{bearingName}}">
+              {{bearingName[bearingIndex2]}}                         
+           </picker>
+           <image class="img" src="../../images/down.png"></image>
+        </view>
+        <view class="state state1">{{states[rdata[time%rdata.length]]}}</view>
+      </view>
+    </view>
+    <view class="time">诊断时间：{{date}}</view>
+  </view>
+
+  <view class="chartTitle">实时故障率分析</view>
+  <view class="chart">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  </view> 
+ 
+  <view class="chartTitle">实时故障分布分析</view>
+  <view class="chart">
+  <ec-canvas id="mychart-dom-bar2" canvas-id="mychart-bar" ec="{{ ec2 }}"></ec-canvas>
+  </view> 
+
+  </van-tab>
+   <van-tab title="轴承数据分析">
+
+    <view class="card card2">
+        <view class="selects">
+          <view class="select">
+           <image src="../../images/fan.png"></image> 
+           <picker bindchange="pickerChange1" value="{{index1}}" range="{{array1}}">
+               {{array1[index1]}}               
+           </picker>
+           <image class="img" src="../../images/down.png"></image>
+          </view>
+          <view class="select selectRight" >
+            <image src="../../images/select.png"></image>
+            <picker bindchange="pickerChange2" value="{{index2}}" range="{{array2}}">
+               {{array2[index2]}}             
+           </picker>
+           <image class="img" src="../../images/down.png"></image>
+          </view>
+        </view>
+
+       <view class="info">
+        <view class="now"> 
+            <view > <view>当前：</view> <view >{{showData}}</view> </view>
+            <view class="time1">{{date}}</view>
+        </view>
+        <view class="history"> 
+          <view>历史最高:{{max}}</view>
+          <view>历史最低:{{min}}</view>
+          <view>历史平均:{{av}}</view>
+        </view>
+       </view>
+       
+    </view>
+    <view class="chartTitle">实时数据分析</view>
+    <view class="chart1">
+    <ec-canvas id="mychart-dom-bar1" canvas-id="mychart-bar" ec="{{ ec1 }}"></ec-canvas>
+    </view>
+  </van-tab>
+
+</van-tabs>

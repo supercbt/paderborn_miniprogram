@@ -1,0 +1,39 @@
+<view  style="width:100vw;height:442rpx;background-image:url(https://746f-touxiang-2gnrz4xh4a323d8a-1304331775.tcb.qcloud.la/green.svg?sign=26744fd5cda99af247d7661744ad09f9&t=1607261566);background-size:100% auto;background-repeat:no-repeat">
+
+  <cu-custom isBack="{{true}}"  bgImage="https://746f-touxiang-2gnrz4xh4a323d8a-1304331775.tcb.qcloud.la/green.svg?sign=26744fd5cda99af247d7661744ad09f9&t=1607261566">
+    <view slot="content" style="font-size:34rpx;color:white;"></view>
+  </cu-custom>
+
+  <view class="titles">
+    <!-- <view class="theme font1"> 一号轴承
+    </view> -->
+    <view class="state">
+    <picker class="theme font1" bindchange="bearingChange" value="{{bearingIndex1}}" range="{{bearingName}}">
+               {{bearingName[bearingIndex]}}               
+           </picker>
+    <image class="img" src="../../images/down.png"></image>
+    </view>
+
+    <view class="theme date">
+      <view class="font2">{{date2}}至{{date1}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="container">
+  <view class="item" >
+      <view>期间故障率</view>  <view> {{data1}}% </view>
+  </view>
+  <view class="item" >
+     <view>期间故障次数</view>  <view> {{data2}}次 </view>
+  </view>
+  <view class="item" style="border:none">
+     期间故障分布
+    
+  </view>
+</view>
+<view class="chart">
+<view style="height:500rpx;width:85%"> <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas> </view>
+</view>
+
+

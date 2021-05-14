@@ -1,0 +1,378 @@
+<!-- <cu-custom bgColor="bg-btblue" isBack="{{true}}"> -->
+<!-- <cu-custom bgColor="--btblue" isBack="{{true}}">
+  <view slot="backText">返回</view>
+  <view slot="content">故障统计</view>
+</cu-custom> -->
+<block wx:if="{{choice}}">
+
+  <view class="section" style="background-image:url('https://686f-homework-7gii7l2555f9fe8e-1301606952.tcb.qcloud.la/bearing.jpg?sign=0b353561c0642099ca8d4ad23492d932&t=1619247859')">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bindMultiPickerColumnChange1"
+      value="{{multiIndex1}}" range="{{multiArray1}}">
+      <view class="picker">
+        <view class='index1' style="padding-top:50rpx;">故障类型选择</view>
+        <view class='index1 chose' >
+          <view>{{multiArray1[0][multiIndex1[0]]}},{{multiArray1[1][multiIndex1[1]]}},{{multiArray1[2][multiIndex1[2]]}} 
+            <image src="../../images/down1.png"></image>
+          </view>
+        </view>
+      </view>
+    </picker>
+  </view>
+
+
+
+
+  <view class="cu-timeline">
+    <block wx:for="{{logs}}" wx:for-item="i">
+      <view wx:if="{{i.status1==0&&(multiIndex1+[]=='0,0,0'||multiIndex1+[]=='0,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 1号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status2==0&&(multiIndex1+[]=='1,0,0'||multiIndex1+[]=='1,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 2号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status3==0&&(multiIndex1+[]=='2,0,0'||multiIndex1+[]=='2,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 3号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status4==0&&(multiIndex1+[]=='3,0,0'||multiIndex1+[]=='3,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 4号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status5==0&&(multiIndex1+[]=='4,0,0'||multiIndex1+[]=='4,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 5号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status6==0&&(multiIndex1+[]=='5,0,0'||multiIndex1+[]=='5,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 6号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status7==0&&(multiIndex1+[]=='6,0,0'||multiIndex1+[]=='6,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 7号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status8==0&&(multiIndex1+[]=='7,0,0'||multiIndex1+[]=='7,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 8号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status9==0&&(multiIndex1+[]=='8,0,0'||multiIndex1+[]=='8,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 9号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status10==0&&(multiIndex1+[]=='9,0,0'||multiIndex1+[]=='9,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 10号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status11==0&&(multiIndex1+[]=='10,0,0'||multiIndex1+[]=='10,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 11号轴承健康
+        </view>
+      </view>
+      <view wx:if="{{i.status12==0&&(multiIndex1+[]=='11,0,0'||multiIndex1+[]=='11,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-green shadow-blur">
+          <text>{{i.logdate}}</text> 12号轴承健康
+        </view>
+      </view>
+
+
+      <view wx:if="{{i.status1==1&&(multiIndex1+[]=='0,1,0'||multiIndex1+[]=='0,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 1号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status2==1&&(multiIndex1+[]=='1,1,0'||multiIndex1+[]=='1,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 2号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status3==1&&(multiIndex1+[]=='2,1,0'||multiIndex1+[]=='2,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 3号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status4==1&&(multiIndex1+[]=='3,1,0'||multiIndex1+[]=='3,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 4号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status5==1&&(multiIndex1+[]=='4,1,0'||multiIndex1+[]=='4,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 5号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status6==1&&(multiIndex1+[]=='5,1,0'||multiIndex1+[]=='5,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 6号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status7==1&&(multiIndex1+[]=='6,1,0'||multiIndex1+[]=='6,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 7号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status8==1&&(multiIndex1+[]=='7,1,0'||multiIndex1+[]=='7,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 8号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status9==1&&(multiIndex1+[]=='8,1,0'||multiIndex1+[]=='8,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 9号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status10==1&&(multiIndex1+[]=='9,1,0'||multiIndex1+[]=='9,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 10号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status11==1&&(multiIndex1+[]=='10,1,0'||multiIndex1+[]=='10,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 11号检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status12==1&&(multiIndex1+[]=='11,1,0'||multiIndex1+[]=='11,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 12号检测到外环1级损伤
+        </view>
+      </view>
+
+      <view wx:if="{{i.status1==2&&(multiIndex1+[]=='0,1,1'||multiIndex1+[]=='0,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 1号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status2==2&&(multiIndex1+[]=='1,1,1'||multiIndex1+[]=='1,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 2号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status3==2&&(multiIndex1+[]=='2,1,1'||multiIndex1+[]=='2,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 3号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status4==2&&(multiIndex1+[]=='3,1,1'||multiIndex1+[]=='3,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 4号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status5==2&&(multiIndex1+[]=='4,1,1'||multiIndex1+[]=='4,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 5号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status6==2&&(multiIndex1+[]=='5,1,1'||multiIndex1+[]=='5,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 6号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status7==2&&(multiIndex1+[]=='6,1,1'||multiIndex1+[]=='6,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 7号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status8==2&&(multiIndex1+[]=='7,1,1'||multiIndex1+[]=='7,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 8号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status9==2&&(multiIndex1+[]=='8,1,1'||multiIndex1+[]=='8,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 9号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status10==2&&(multiIndex1+[]=='9,1,1'||multiIndex1+[]=='9,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 10号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status11==2&&(multiIndex1+[]=='10,1,1'||multiIndex1+[]=='10,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 11号检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status12==2&&(multiIndex1+[]=='11,1,1'||multiIndex1+[]=='11,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 12号检测到外环2级损伤
+        </view>
+      </view>
+
+      <view wx:if="{{i.status1==3&&(multiIndex1+[]=='0,2,0'||multiIndex1+[]=='0,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 1号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status2==3&&(multiIndex1+[]=='1,2,0'||multiIndex1+[]=='1,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 2号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status3==3&&(multiIndex1+[]=='2,2,0'||multiIndex1+[]=='2,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 3号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status4==3&&(multiIndex1+[]=='3,2,0'||multiIndex1+[]=='3,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 4号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status5==3&&(multiIndex1+[]=='4,2,0'||multiIndex1+[]=='4,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 5号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status6==3&&(multiIndex1+[]=='5,2,0'||multiIndex1+[]=='5,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 6号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status7==3&&(multiIndex1+[]=='6,2,0'||multiIndex1+[]=='6,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 7号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status8==3&&(multiIndex1+[]=='7,2,0'||multiIndex1+[]=='7,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 8号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status9==3&&(multiIndex1+[]=='8,2,0'||multiIndex1+[]=='8,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 9号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status10==3&&(multiIndex1+[]=='9,2,0'||multiIndex1+[]=='9,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 10号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status11==3&&(multiIndex1+[]=='10,2,0'||multiIndex1+[]=='10,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 11号检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status12==3&&(multiIndex1+[]=='11,2,0'||multiIndex1+[]=='11,0,0')}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 12号检测到内环1级损伤
+        </view>
+      </view>
+
+      <view wx:if="{{i.status1==4&&(multiIndex1+[]=='0,2,1'||multiIndex1+[]=='0,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 1号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status2==4&&(multiIndex1+[]=='1,2,1'||multiIndex1+[]=='1,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 2号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status3==4&&(multiIndex1+[]=='2,2,1'||multiIndex1+[]=='2,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 3号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status4==4&&(multiIndex1+[]=='3,2,1'||multiIndex1+[]=='3,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 4号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status5==4&&(multiIndex1+[]=='4,2,1'||multiIndex1+[]=='4,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 5号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status6==4&&(multiIndex1+[]=='5,2,1'||multiIndex1+[]=='5,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 6号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status7==4&&(multiIndex1+[]=='6,2,1'||multiIndex1+[]=='6,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 7号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status8==4&&(multiIndex1+[]=='7,2,1'||multiIndex1+[]=='7,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 8号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status9==4&&(multiIndex1+[]=='8,2,1'||multiIndex1+[]=='8,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 9号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status10==4&&(multiIndex1+[]=='9,2,1'||multiIndex1+[]=='9,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 10号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status11==4&&(multiIndex1+[]=='10,2,1'||multiIndex1+[]=='10,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 11号检测到内环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status12==4&&(multiIndex1+[]=='11,2,1'||multiIndex1+[]=='11,0,1')}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 12号检测到内环2级损伤
+        </view>
+      </view>
+    </block>
+  </view>
+</block>
+
+
+<block wx:if="{{!choice}}">
+
+  <view class="section" style="background-image:url('https://686f-homework-7gii7l2555f9fe8e-1301606952.tcb.qcloud.la/bearing.jpg?sign=0b353561c0642099ca8d4ad23492d932&t=1619247859')">
+    <picker mode="multiSelector" bindchange="bindMultiPickerChange2" bindcolumnchange="bindMultiPickerColumnChange2"
+      value="{{multiIndex2}}" range="{{multiArray2}}">
+      <view class="picker">
+        <view class='index1' style="padding-top:50rpx;">故障类型选择</view>
+        <view class='index1 chose' >
+          <view>{{multiArray2[0][multiIndex2[0]]}},{{multiArray2[1][multiIndex2[1]]}}
+            <image src="../../images/down1.png"></image>
+          </view>
+        </view>
+      </view>
+    </picker>
+  </view>
+
+
+  <view class="cu-timeline">
+    <block wx:for="{{logs}}" wx:for-item="i">
+      <view wx:if="{{i.status==1&&multiIndex2+[]=='0,0'}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 检测到外环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status==2&&multiIndex2+[]=='0,1'}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 检测到外环2级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status==3&&multiIndex2+[]=='1,0'}}" class="cu-item text-gray">
+        <view class="content bg-orange shadow-blur">
+          <text>{{i.logdate}}</text> 检测到内环1级损伤
+        </view>
+      </view>
+      <view wx:if="{{i.status==4&&multiIndex2+[]=='1,1'}}" class="cu-item text-gray">
+        <view class="content bg-red shadow-blur">
+          <text>{{i.logdate}}</text> 检测到内环2级损伤
+        </view>
+      </view>
+    </block>
+  </view>
+</block>

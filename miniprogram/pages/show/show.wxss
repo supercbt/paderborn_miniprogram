@@ -1,0 +1,164 @@
+
+page {
+  background:white
+}
+.card{
+  margin-top: 30rpx;
+  width: 90%;
+  margin-left: 5%;
+  height: 460rpx;
+  background:  	#4169E1;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 32rpx 0 rgba(74,96,142,0.16) ;
+}
+.title{
+  width: 100%;
+  color:white;
+  display: flex;
+  justify-content: center;
+  padding-top:20rpx;
+  font-size:36rpx;
+  font-weight:500;
+}
+.container{
+  display: flex;
+}
+.led{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.circle{
+  margin-top:30rpx;
+  width: 150rpx;
+  height:150rpx;
+  border-radius: 50%;
+  background:  	#4169E1	;
+  border:8rpx solid	#FB70A3; 	
+  /* #DB7093 #EE4511 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hover{
+  opacity: 0.5;
+}
+
+.green{
+border:8rpx solid	#00CED1;
+}
+
+.circle image{
+  width: 60rpx;
+  height:60rpx;
+}
+
+.state{
+margin-top:30rpx;
+color:white;
+font-size:32rpx;
+font-weight:500;
+width:100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.state1{
+  margin-top:10rpx;
+}
+.time{
+margin:30rpx 5rpx 0 0 ;
+color:  	#F5F5F5;
+font-size:26rpx;
+width: 100%;
+display: flex;
+justify-content: center;
+}
+
+.chart{
+  width:90%;
+  margin-left:5%;
+  height:570rpx;
+}
+.chart1{
+  margin-top:50rpx;
+  width:90%;
+  margin-left:5%;
+  height:600rpx;
+}
+
+
+.selects{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.select{
+ display: flex;
+ color:white;
+ align-items: center;
+ justify-content: center;
+ width: 50%;
+ margin-top: 30rpx;
+}
+
+.select image:first-child{
+  width:60rpx;
+  height:60rpx;
+  margin-right:20rpx;
+}
+
+.img{
+  width:26rpx;
+  height:26rpx;
+  margin-left:10rpx;
+}
+.info{
+  display: flex;
+  color:white;
+}
+.now{
+  width: 50%;
+  margin:0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:30rpx;
+}
+.now :first-child{
+  display: flex;
+  align-items: center;
+  margin:30rpx 0 0 20rpx;
+
+}
+.now :first-child :nth-child(2){
+  font-size:80rpx;
+  color: 	  	 	#FF7F50;
+  margin-top:10rpx;
+}
+.history{
+  margin:40rpx 0 0 70rpx;
+  height:200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.time1{
+  color:  	#F5F5F5;
+  font-size:26rpx;
+  margin:35rpx 0 0 30rpx;
+}
+.card.card2{
+  height:370rpx;
+}
+
+.chartTitle{
+  font-size:40rpx;
+  font-weight:550;
+  display: flex;
+  justify-content: center;
+  margin-top:30rpx;
+}
